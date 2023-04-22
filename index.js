@@ -15,7 +15,7 @@ app.use('/',router);
 app.use('/',CartRouter);
 app.use('/',PaymentRouter);
 
-mongoose.connect('mongodb://127.0.0.1:27017/ECommerce',{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
+mongoose.connect('mongodb+srv://jaykishanchaudhary678:Jaykishan@007@cluster0.1xz755a.mongodb.net/test/ECommerce',{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
     console.log('Connected to DB')
 }).catch((error)=>{
     throw error
