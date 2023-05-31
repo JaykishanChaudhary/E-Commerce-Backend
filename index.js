@@ -19,10 +19,7 @@ app.use('/',router);
 app.use('/',CartRouter);
 app.use('/',PaymentRouter);
 
-// const mongouri=process.env.MONGODB_ATLAS
-
-mongoose.connect("mongodb+srv://jaykishanchaudhary678:KF5XB3Zpg8MfjhUf@cluster0.1xz755a.mongodb.net/Ecommerce",{useNewUrlParser:true,useUnifiedTopology:true})
-.then(()=>{
+mongoose.connect('mongodb+srv://jaykishanchaudhary678:KF5XB3Zpg8MfjhUf@cluster0.1xz755a.mongodb.net/Ecommerce',{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
     console.log('Connected to DB')
 }).catch((error)=>{
     throw error.message
