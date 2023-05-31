@@ -5,6 +5,10 @@ const mongoose=require('mongoose');
 const cors=require('cors');
 const CartRouter=require('./Router/Router.Cart');
 const PaymentRouter=require('./Router/Router.payment');
+const env=require('dotenv');
+// { path: '/custom/path/to/.env' }
+
+env.config({ path: '/custom/path/to/.env' });
 
 app.use(cors());
 app.use(express());
@@ -15,10 +19,13 @@ app.use('/',router);
 app.use('/',CartRouter);
 app.use('/',PaymentRouter);
 
-mongoose.connect('mongodb://127.0.0.1:27017/ECommerce',{useNewUrlParser:true,useUnifiedTopology:true}).then(()=>{
+// const mongouri=process.env.MONGODB_ATLAS
+
+mongoose.connect("mongodb+srv://jaykishanchaudhary678:KF5XB3Zpg8MfjhUf@cluster0.1xz755a.mongodb.net/Ecommerce",{useNewUrlParser:true,useUnifiedTopology:true})
+.then(()=>{
     console.log('Connected to DB')
 }).catch((error)=>{
-    throw error
+    throw error.message
 })
 
 

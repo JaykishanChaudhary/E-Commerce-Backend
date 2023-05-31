@@ -1,5 +1,5 @@
 const router=require('express').Router();
-const ProductModel=require('../Model/product.model');
+const {ProductModel}=require('../Model/product.model');
 
 router.get('/getproduct',async(req,res)=>{
     try{
